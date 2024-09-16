@@ -1,15 +1,20 @@
-
 import React from 'react';
 
-const Password = () => {
-    return (
-        
-        <div>
-            Password:
-            <input type='text'></input>
+const Password = ({ onChangePassword, className }) => {
 
+    const onPasswordComplete = (e) => {
+        onChangePassword(e.target.value);
+    }
+
+    return (
+        <div>
+            <input 
+                type='password'
+                placeholder="Password"
+                onBlur={onPasswordComplete}
+                className={className} 
+            />
         </div>
-        
     );
 };
 
